@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
-
 const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 enum State {MOVE, DEAD}
 var current_state: State = State.MOVE
 
@@ -53,7 +53,11 @@ func state_move(delta: float) -> void:
 		velocity.x = 0
 
 func state_dead(delta: float) -> void:
-	# Apply Gravity (No Need for a Check Since Collision is Turned off)
+	# Turn off Collision so the Player Falls off the Map on Death.
+	if collision_shape_2d:
+		collision_shape_2d.queue_free()
+
+	# Apply Gravity.
 	velocity += get_gravity() * delta
 
 	# Handle the Animation.

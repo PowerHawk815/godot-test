@@ -37,39 +37,32 @@ text = "Volume"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ButtonManger" type="Control" parent="." unique_id=1873167086]
+[node name="ButtonManager" type="Control" parent="." unique_id=1873167086]
 anchors_preset = 0
 
-[node name="Volume" type="HSlider" parent="ButtonManger" unique_id=1093171188]
+[node name="Volume" type="HSlider" parent="ButtonManager" unique_id=1093171188]
 layout_mode = 0
 offset_left = 220.0
 offset_top = 114.0
 offset_right = 445.0
 offset_bottom = 130.0
+max_value = 2.0
+step = 0.1
+value = 1.0
 
-[node name="Mute" type="CheckBox" parent="ButtonManger" unique_id=2109920232]
+[node name="Mute" type="CheckBox" parent="ButtonManager" unique_id=2109920232]
 layout_mode = 0
 offset_left = 194.0
 offset_top = 110.0
 offset_right = 218.0
 offset_bottom = 134.0
 
-[node name="Back" type="Button" parent="ButtonManger" unique_id=1712550555]
-layout_mode = 0
-offset_left = 232.0
-offset_top = 304.0
-offset_right = 408.0
-offset_bottom = 360.0
-theme_override_fonts/font = ExtResource("2_wswnh")
-theme_override_font_sizes/font_size = 48
-text = "Back"
-
-[node name="OptionButton" type="OptionButton" parent="ButtonManger" unique_id=694961790]
+[node name="ScreenMode" type="OptionButton" parent="ButtonManager" unique_id=694961790]
 layout_mode = 0
 offset_left = 92.0
 offset_top = 191.0
 offset_right = 548.0
-offset_bottom = 211.0
+offset_bottom = 223.0
 theme_override_fonts/font = ExtResource("2_wswnh")
 theme_override_font_sizes/font_size = 24
 alignment = 1
@@ -79,5 +72,17 @@ popup/item_0/id = 0
 popup/item_1/text = "Fullscreen"
 popup/item_1/id = 1
 
-[connection signal="pressed" from="ButtonManger/Back" to="." method="_on_back_pressed"]
-[connection signal="item_selected" from="ButtonManger/OptionButton" to="." method="_on_option_button_item_selected"]
+[node name="Back" type="Button" parent="ButtonManager" unique_id=1712550555]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 304.0
+offset_right = 408.0
+offset_bottom = 360.0
+theme_override_fonts/font = ExtResource("2_wswnh")
+theme_override_font_sizes/font_size = 48
+text = "Back"
+
+[connection signal="value_changed" from="ButtonManager/Volume" to="." method="_on_volume_value_changed"]
+[connection signal="toggled" from="ButtonManager/Mute" to="." method="_on_mute_toggled"]
+[connection signal="item_selected" from="ButtonManager/ScreenMode" to="." method="_on_screen_mode_item_selected"]
+[connection signal="pressed" from="ButtonManager/Back" to="." method="_on_back_pressed"]
