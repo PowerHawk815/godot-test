@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://c66f2tiagg1sr"]
 
-[ext_resource type="PackedScene" uid="uid://cq4s2c577g325" path="res://scenes/main_menu.tscn" id="1_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://b3hjlgmu1lcvb" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://booft2on80lem" path="res://assets/sprites/world_tileset.png" id="1_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://dqa01xdajdmpt" path="res://scenes/platform.tscn" id="3_lnu2h"]
@@ -218,8 +217,6 @@ _data = {
 
 [node name="Game" type="Node2D" unique_id=1668472423]
 
-[node name="MainMenu" parent="." unique_id=1078152277 instance=ExtResource("1_0tnpc")]
-
 [node name="GameManager" type="Node" parent="." unique_id=549004611]
 unique_name_in_owner = true
 script = ExtResource("8_0tnpc")
@@ -249,7 +246,7 @@ layer_1/tile_data = PackedInt32Array(65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 655
 position = Vector2(0, -7)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1926362790]
-zoom = Vector2(4, 4)
+zoom = Vector2(3, 3)
 limit_bottom = 128
 limit_smoothed = true
 position_smoothing_enabled = true

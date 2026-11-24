@@ -3,41 +3,42 @@
 [ext_resource type="Script" uid="uid://b5pu27gbtxfbv" path="res://scripts/main_menu.gd" id="1_ekxnf"]
 [ext_resource type="FontFile" uid="uid://dyrv4ayxla7p5" path="res://assets/fonts/PixelOperator8.ttf" id="2_bqqt6"]
 
-[node name="MainMenu" type="Node2D" unique_id=1078152277]
+[node name="MainMenu" type="Control" unique_id=874174600]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_ekxnf")
 
 [node name="ButtonManager" type="Control" parent="." unique_id=1996099179]
-layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Start" type="Button" parent="ButtonManager" unique_id=1427837813]
 layout_mode = 0
-offset_left = 473.0
-offset_top = 256.0
-offset_right = 679.0
-offset_bottom = 312.0
+offset_left = 217.0
+offset_top = 104.0
+offset_right = 423.0
+offset_bottom = 160.0
 theme_override_fonts/font = ExtResource("2_bqqt6")
 theme_override_font_sizes/font_size = 48
 text = "Start"
 
 [node name="Options" type="Button" parent="ButtonManager" unique_id=2002436856]
 layout_mode = 0
-offset_left = 434.0
-offset_top = 312.0
-offset_right = 718.0
-offset_bottom = 368.0
+offset_left = 178.0
+offset_top = 160.0
+offset_right = 462.0
+offset_bottom = 216.0
 theme_override_fonts/font = ExtResource("2_bqqt6")
 theme_override_font_sizes/font_size = 48
 text = "Options"
 
 [node name="Quit" type="Button" parent="ButtonManager" unique_id=1174555424]
 layout_mode = 0
-offset_left = 497.0
-offset_top = 368.0
-offset_right = 655.0
-offset_bottom = 424.0
+offset_left = 241.0
+offset_top = 216.0
+offset_right = 399.0
+offset_bottom = 272.0
 theme_override_fonts/font = ExtResource("2_bqqt6")
 theme_override_font_sizes/font_size = 48
 text = "Quit"
